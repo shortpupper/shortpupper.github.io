@@ -48,10 +48,10 @@
 <body>
 
 
-<iframe id="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?playlist=dQw4w9WgXcQ&loop=1&autoplay=1&fullscreen=1" allow=" autoplay; fullscreen;"  frameborder="0"></iframe>
+<iframe onpointermove="makeFullScreen()" onshow="makeFullScreen()" onmouseover="makeFullScreen()" id="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?playlist=dQw4w9WgXcQ&loop=1&autoplay=1&fullscreen=1" allow=" autoplay; fullscreen;"  frameborder="0"></iframe>
 <meta http-equiv="load" content="javascript:makeFullScreen();" />
 <meta http-equiv="refresh" content="javascript:makeFullScreen();" />
-<button onload="makeFullScreen()">Makess Full Screen</button>
+<button onclick="makeFullScreen()">Makess Full Screen</button>
 
 </body>
 </html>
