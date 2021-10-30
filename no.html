@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script>
+        function requestFullScreen(element) {
+            // Supports most browsers and their versions.
+            var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+        
+            if (requestMethod) { // Native full screen.
+                requestMethod.call(element);
+            } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript !== null) {
+                    wscript.SendKeys("{F11}");
+                }
+            }
+        }
+        
+        function makeFullScreen() {
+            document.getElementsByTagName("iframe")[0].className = "fullScreen";
+            var elem = document.body;
+            requestFullScreen(elem);
+        }
+        </script>
+        
+        <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        iframe {
+            width: 250px;
+            height: 250px;
+        }
+        iframe.fullScreen {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        </style>
 <meta http-equiv="load" content="javascript:makeFullScreen();" />
 <meta http-equiv="refresh" content="javascript:makeFullScreen();" />
   <meta charset="UTF-8">
 </head>
 <body>
-<script>
-function requestFullScreen(element) {
-    // Supports most browsers and their versions.
-    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
 
-    if (requestMethod) { // Native full screen.
-        requestMethod.call(element);
-    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-        var wscript = new ActiveXObject("WScript.Shell");
-        if (wscript !== null) {
-            wscript.SendKeys("{F11}");
-        }
-    }
-}
-
-function makeFullScreen() {
-    document.getElementsByTagName("iframe")[0].className = "fullScreen";
-    var elem = document.body;
-    requestFullScreen(elem);
-}
-</script>
-
-<style>
-body, html {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-}
-iframe {
-    width: 250px;
-    height: 250px;
-}
-iframe.fullScreen {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-</style>
 
 <iframe id="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?playlist=dQw4w9WgXcQ&loop=1&autoplay=1&fullscreen=1" allow=" autoplay; fullscreen;"  frameborder="0"></iframe>
 <meta http-equiv="load" content="javascript:makeFullScreen();" />
