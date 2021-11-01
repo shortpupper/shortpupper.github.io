@@ -10,8 +10,12 @@
     <button onclick="document.location='/pages/page-to-go.html'">home</button>
     <img id="example" src="myPicture.jpg">
     <input type="button" id="myButton" value="I'm a button!">
-    <div id="div2"></div> //Make a div with an id of div2 (we also could have made it with JavaScript)
-    
+    <script>
+        myButton = document.getElementById("myButton"); //searches for and detects the input element from the 'myButton' id
+        myButton.value = "I'm a changed button"; //changes the value
+        myButton.type = "text"; //changes the input type from 'button' to 'text'
+    </script>
+    <div id="div2"></div>
     <script src="scritp.js"></script>
 </body>
 </html>
