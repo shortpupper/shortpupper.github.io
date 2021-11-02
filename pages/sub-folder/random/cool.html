@@ -6,8 +6,11 @@
 
 <p id="demo"></p>
 <p id="demos"></p>
-
+<input type="button" id="myButton" value=1000>
 <script>
+    myButton = document.getElementById("myButton");
+    myButton.type = "text"; 
+
 const numbers = [1];
 
 let txt = "";
@@ -25,7 +28,7 @@ setInterval(function () {
 	numbers.forEach(myFunction);
     //document.getElementById("demos").innerHTML = (txts += (txtsss += 1)+"\n")
     times(1)
-}, 1000);
+}, myButton.value);
 
 
 function myFunction(value) {
