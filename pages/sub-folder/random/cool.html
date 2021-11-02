@@ -7,11 +7,13 @@
 <p id="demo"></p>
 <p id="demos"></p>
 <input type="button" id="myButton" value=1000>
-<input type="submit" value="Submit">
+<input type="button" onclick="" value="-500">
+<input type="button" onclick="" value="+500">
 <script>
 myButton = document.getElementById("myButton");
 myButton.type = "text"; 
-
+var mb = myButton.value -500
+var mb2 = myButton.value +500
 const numbers = [1];
 
 let txt = "";
