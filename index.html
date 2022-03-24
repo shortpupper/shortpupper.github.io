@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>your ip is</title>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ <script>
+  let apiKey = '50e887ce-e3bb-4f00-a9b9-667597db5539';
+  $.getJSON('https://ipfind.co/me?auth=' + apiKey, function(data) {
+    let ok = JSON.stringify(data, null, 2);
+    console.log(ok);
+    const obj = JSON.parse(String(ok));
+    document.getElementById("ip1").innerHTML = "'"+obj.ip_address+"'";
+  });
+ </script>
+</head>
+<body>
+ <h1>Your ip is <a id="ip1"></a></h1>
+</body>
+</html>
